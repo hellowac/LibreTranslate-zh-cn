@@ -27,3 +27,4 @@ pip>25
 sphinxcontrib-plantuml==0.21
 sphinx-inline-tabs
 sphinx_copybutton
+furo
