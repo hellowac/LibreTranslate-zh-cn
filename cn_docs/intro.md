@@ -230,10 +230,6 @@ docker compose -f docker-compose.cuda.yml up -d --build
 | --metrics-auth-token       | 通过 Authorization Bearer 令牌保护 `/metrics` 端点，仅允许拥有有效令牌的客户端访问                                               | `空（不启用身份验证）`                   | LT_METRICS_AUTH_TOKEN       |
 | --url-prefix               | 为 URL 添加前缀，例如：example.com:5000/url-prefix/                                                                              | `/`                                      | LT_URL_PREFIX               |
 
-以下是这段 Markdown 文本的中文翻译，保留了原有的技术风格和结构：
-
----
-
 ### 说明
 
 - 每个参数都可以通过对应的环境变量来设置。环境变量会覆盖默认值，但其优先级低于命令行参数。环境变量特别适合在 Docker 中使用。环境变量的名称为对应参数名称的大写蛇形命名（upper-snake-case），并加上 `LT` 前缀。
@@ -320,10 +316,6 @@ helm install libretranslate libretranslate/libretranslate --namespace libretrans
 LibreTranslate 支持用户级别的限流配额。例如，你可以为用户分配 API 密钥，以允许他们享有更高的每分钟请求上限（前提是你设置了 `--req-limit`）。默认情况下，所有用户都受 `--req-limit` 的限制，但通过向 REST 接口传递可选参数 `api_key`，用户可获得更高的请求限额。你还可以为特定密钥设置字符限制，从而绕过默认的 `--char-limit` 设置。
 
 要启用 API 密钥功能，只需使用 `--api-keys` 参数启动 LibreTranslate。如果你通过 `--api-keys-db-path` 参数修改了 API 密钥数据库路径，那么在使用 `ltmanage keys` 命令时也必须通过相同参数指定路径。
-
-以下是这部分内容的翻译，保持 Markdown 格式和技术文风不变：
-
----
 
 ### 添加新密钥
 
@@ -426,10 +418,6 @@ gunicorn -c scripts/gunicorn_conf.py --bind 0.0.0.0:5000 'wsgi:app(metrics=True)
 - Java: <https://github.com/suuft/libretranslate-java>
 - Ruby: <https://github.com/noesya/libretranslate>
 - R: <https://github.com/myanesp/libretranslateR>
-
-以下是这部分内容的翻译，保持了原有的结构和格式：
-
----
 
 ## Discourse 插件
 
@@ -555,10 +543,6 @@ LibreTranslate 的网页界面支持所有其翻译能力涵盖的语言，并�
 | Turkish               |                    | [Edit](https://hosted.weblate.org/translate/libretranslate/app/tr/)      |
 | Ukrainian             | :heavy_check_mark: | [Edit](https://hosted.weblate.org/translate/libretranslate/app/uk/)      |
 | Vietnamese            |                    | [Edit](https://hosted.weblate.org/translate/libretranslate/app/vi/)      |
-
-以下是这部分内容的翻译，保留了原格式、结构及细节说明：
-
----
 
 ## 路线图（Roadmap）
 
@@ -767,10 +751,6 @@ server {
 将其添加到现有的 NGINX 配置中或将其保存为 `/etc/nginx/site-enabled` 目录中的 `libretranslate` ，然后运行 ​​`sudo nginx -s reload`。
 
 </details>
-
-以下是这部分内容的翻译，保留了原有结构和代码格式：
-
----
 
 ### 我可以使用 systemd 来运行 LibreTranslate（即默认使用 pip/python 安装的版本）吗？
 
