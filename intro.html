@@ -1,0 +1,1413 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="索引" href="genindex.html" /><link rel="search" title="搜索" href="search.html" /><link rel="next" title="贡献指南（Contributing）" href="contro.html" /><link rel="prev" title="Welcome to libretranslate’s documentation!" href="index.html" />
+
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
+        <title>LibreTranslate - libretranslate 1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">libretranslate 1.0 文档</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">libretranslate 1.0 文档</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="搜索" name="q" aria-label="搜索">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">LibreTranslate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contro.html">贡献指南（Contributing）</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/intro.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="libretranslate">
+<h1>LibreTranslate<a class="headerlink" href="#libretranslate" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://libretranslate.com">Try it online!</a> | <a class="reference external" href="https://libretranslate.com/docs">API Docs</a> | <a class="reference external" href="https://community.libretranslate.com/">Community Forum</a></p>
+<p><a class="reference external" href="https://pypi.org/project/libretranslate"><img alt="Python versions" src="https://img.shields.io/pypi/pyversions/libretranslate" /></a> <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/actions?query=workflow%3A%22Run+tests%22"><img alt="Run tests" src="https://github.com/LibreTranslate/LibreTranslate/workflows/Run%20tests/badge.svg" /></a> <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/actions/workflows/publish-docker.yml"><img alt="Build and Publish Docker Image" src="https://github.com/LibreTranslate/LibreTranslate/actions/workflows/publish-docker.yml/badge.svg" /></a> <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/actions/workflows/publish-package.yml"><img alt="Publish package" src="https://github.com/LibreTranslate/LibreTranslate/actions/workflows/publish-package.yml/badge.svg" /></a> <a class="reference external" href="https://codeberg.org/teaserbot-labs/delightful-humane-design"><img alt="Awesome Humane Tech" src="https://raw.githubusercontent.com/humanetech-community/awesome-humane-tech/main/humane-tech-badge.svg?sanitize=true" /></a></p>
+<p>免费开源机器翻译 API，完全自托管。与其他 API 不同，它不依赖 Google 或 Azure 等专有服务提供商来执行翻译。相反，它的翻译引擎由开源 <a class="reference external" href="https://github.com/argosopentech/argos-translate">Argos Translate</a> 库提供支持。</p>
+<p><img alt="Translation" src="https://github.com/user-attachments/assets/457696b5-dbff-40ab-a18e-7bfb152c5121" /></p>
+<p><a class="reference external" href="https://libretranslate.com">Try it online!</a> | <a class="reference external" href="https://libretranslate.com/docs">API Docs</a></p>
+<section id="api">
+<h2>API 例子<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
+<section id="simple">
+<h3>Simple<a class="headerlink" href="#simple" title="Link to this heading">¶</a></h3>
+<p>Request:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://libretranslate.com/translate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">q</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;translatedText&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;¡Hola!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>List of language codes: <a class="reference external" href="https://libretranslate.com/languages">https://libretranslate.com/languages</a></p>
+</section>
+<section id="id1">
+<h3>自动检测语言<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Request:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://libretranslate.com/translate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">q</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ciao!&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;detectedLanguage&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;confidence&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">83</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;language&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;it&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="s2">&quot;translatedText&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bye!&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="html">
+<h3>HTML<a class="headerlink" href="#html" title="Link to this heading">¶</a></h3>
+<p>Request:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://libretranslate.com/translate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">q</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;p class=&quot;green&quot;&gt;Hello!&lt;/p&gt;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;html&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;translatedText&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&lt;p class=\&quot;green\&quot;&gt;¡Hola!&lt;/p&gt;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h3>其他翻译<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>Request:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://libretranslate.com/translate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">q</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;it&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">alternatives</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>Response:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;alternatives&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Salve&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Pronto&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;translatedText&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Ciao&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id3">
+<h2>安装和运行<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h2>
+<p>只需几行设置即可运行您自己的 API 服务器！</p>
+<p>请确保您已安装 Python（建议使用 3.8 或更高版本），然后运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>libretranslate
+libretranslate<span class="w"> </span><span class="o">[</span>args<span class="o">]</span>
+</pre></div>
+</div>
+<p>然后打开网页浏览器访问 <a class="reference external" href="http://localhost:5000">http://localhost:5000</a></p>
+<p>LibreTranslate 默认会安装所有可用语言的支持。如果只想加载特定语言并缩短启动时间，可以使用 <strong>–load-only</strong> 参数：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>libretranslate<span class="w"> </span>--load-only<span class="w"> </span>en,es,fr
+</pre></div>
+</div>
+<p>另请检查下方所有其他<a class="reference internal" href="#%E8%AE%BE%E7%BD%AE--%E6%A0%87%E5%BF%97"><span class="xref myst">参数</span></a>。</p>
+<p>在 Ubuntu 20.04 上，您还可以使用 <a class="reference external" href="https://github.com/argosopentech/LibreTranslate-init">https://github.com/argosopentech/LibreTranslate-init</a> 提供的安装脚本。</p>
+</section>
+<section id="docker">
+<h2>使用 Docker 运行<a class="headerlink" href="#docker" title="Link to this heading">¶</a></h2>
+<p>您还可以使用 <a class="reference external" href="https://docker.com">docker</a> 运行该应用程序：</p>
+<section id="linux-macos">
+<h3>Linux/macOS<a class="headerlink" href="#linux-macos" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh<span class="w"> </span><span class="o">[</span>args<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>run.bat<span class="w"> </span><span class="o">[</span>args<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>构建并运行<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h2>
+<p>有关如何自行构建和运行项目的信息，请参阅 <a class="reference internal" href="#./CONTRIBUTING.md"><span class="xref myst">CONTRIBUTING.md</span></a>。</p>
+<section id="cuda">
+<h3>CUDA<a class="headerlink" href="#cuda" title="Link to this heading">¶</a></h3>
+<p>您可以使用硬件加速来加速安装了 CUDA 12.4.1 和 <a class="reference external" href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html">nvidia-docker</a> 的 GPU 计算机上的翻译。</p>
+<p>使用以下命令运行此版本：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose.cuda.yml<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>--build
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>参数<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h2>
+<p>传递给进程或通过环境变量设置的参数分为两类。</p>
+<ul class="simple">
+<li><p>用于切换特定运行模式或禁用应用程序某些部分的设置或运行时标志。这些设置或运行时标志在添加或删除时用作切换开关。</p></li>
+<li><p>用于设置各种限制和配置应用程序的配置参数。这些配置参数需要传递给函数，如果删除，则使用默认参数。</p></li>
+</ul>
+<section id="id6">
+<h3>设置 / 标志<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>默认设置</p></th>
+<th class="head"><p>环境变量名称</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–debug</p></td>
+<td><p>启用调试环境</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">已禁用</span></code></p></td>
+<td><p>LT_DEBUG</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ssl</p></td>
+<td><p>是否启用 SSL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">已禁用</span></code></p></td>
+<td><p>LT_SSL</p></td>
+</tr>
+<tr class="row-even"><td><p>–api-keys</p></td>
+<td><p>在达到 –req-limit 时启用基于 API 密钥的每客户端速率限制数据库</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">不使用</span> <span class="pre">API</span> <span class="pre">密钥</span></code></p></td>
+<td><p>LT_API_KEYS</p></td>
+</tr>
+<tr class="row-odd"><td><p>–require-api-key-origin</p></td>
+<td><p>要求对 API 的编程访问使用 API 密钥，除非请求来源匹配指定域名</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">对来源域没有限制</span></code></p></td>
+<td><p>LT_REQUIRE_API_KEY_ORIGIN</p></td>
+</tr>
+<tr class="row-even"><td><p>–require-api-key-secret</p></td>
+<td><p>要求对 API 的编程访问使用 API 密钥，且客户端必须提供匹配的密钥</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">不要求提供密钥</span></code></p></td>
+<td><p>LT_REQUIRE_API_KEY_SECRET</p></td>
+</tr>
+<tr class="row-odd"><td><p>–suggestions</p></td>
+<td><p>允许用户建议</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">已禁用</span></code></p></td>
+<td><p>LT_SUGGESTIONS</p></td>
+</tr>
+<tr class="row-even"><td><p>–disable-files-translation</p></td>
+<td><p>禁用文件翻译</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">允许文件翻译</span></code></p></td>
+<td><p>LT_DISABLE_FILES_TRANSLATION</p></td>
+</tr>
+<tr class="row-odd"><td><p>–disable-web-ui</p></td>
+<td><p>禁用 Web 界面</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Web</span> <span class="pre">界面已启用</span></code></p></td>
+<td><p>LT_DISABLE_WEB_UI</p></td>
+</tr>
+<tr class="row-even"><td><p>–update-models</p></td>
+<td><p>启动时更新语言模型</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">仅在未找到模型时启用</span></code></p></td>
+<td><p>LT_UPDATE_MODELS</p></td>
+</tr>
+<tr class="row-odd"><td><p>–metrics</p></td>
+<td><p>启用 <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> 端点以导出 <a class="reference external" href="https://prometheus.io/">Prometheus</a> 使用指标</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">已禁用</span></code></p></td>
+<td><p>LT_METRICS</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id7">
+<h3>配置参数<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>描述</p></th>
+<th class="head"><p>默认参数</p></th>
+<th class="head"><p>环境变量名称</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–host</p></td>
+<td><p>设置服务器绑定的主机地址</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code></p></td>
+<td><p>LT_HOST</p></td>
+</tr>
+<tr class="row-odd"><td><p>–port</p></td>
+<td><p>设置服务器绑定的端口号</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
+<td><p>LT_PORT</p></td>
+</tr>
+<tr class="row-even"><td><p>–char-limit</p></td>
+<td><p>设置字符数限制</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">无限制</span></code></p></td>
+<td><p>LT_CHAR_LIMIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>–req-limit</p></td>
+<td><p>设置每个客户端每分钟的最大请求数（不包括通过 API 密钥设置的限制）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">无限制</span></code></p></td>
+<td><p>LT_REQ_LIMIT</p></td>
+</tr>
+<tr class="row-even"><td><p>–req-limit-storage</p></td>
+<td><p>设置用于请求限速数据存储的 URI。详见 <a class="reference external" href="https://flask-limiter.readthedocs.io/en/stable/configuration.html">Flask Limiter 配置文档</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">memory://</span></code></p></td>
+<td><p>LT_REQ_LIMIT_STORAGE</p></td>
+</tr>
+<tr class="row-odd"><td><p>–req-time-cost</p></td>
+<td><p>设置用于限速的时间代价（单位：秒）。如果一个请求耗时 10 秒，该值设为 5，则请求代价取 2 和实际耗时中的较大者</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">无时间代价</span></code></p></td>
+<td><p>LT_REQ_TIME_COST</p></td>
+</tr>
+<tr class="row-even"><td><p>–batch-limit</p></td>
+<td><p>设置批量翻译请求中的最大文本数量</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">无限制</span></code></p></td>
+<td><p>LT_BATCH_LIMIT</p></td>
+</tr>
+<tr class="row-odd"><td><p>–ga-id</p></td>
+<td><p>通过提供 ID，在 API 客户端页面启用 Google Analytics</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">空（不启用跟踪）</span></code></p></td>
+<td><p>LT_GA_ID</p></td>
+</tr>
+<tr class="row-even"><td><p>–frontend-language-source</p></td>
+<td><p>设置前端默认源语言</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">auto</span></code></p></td>
+<td><p>LT_FRONTEND_LANGUAGE_SOURCE</p></td>
+</tr>
+<tr class="row-odd"><td><p>–frontend-language-target</p></td>
+<td><p>设置前端默认目标语言</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">locale</span></code>（匹配站点语言）</p></td>
+<td><p>LT_FRONTEND_LANGUAGE_TARGET</p></td>
+</tr>
+<tr class="row-even"><td><p>–frontend-timeout</p></td>
+<td><p>设置前端翻译超时时间</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">500</span></code></p></td>
+<td><p>LT_FRONTEND_TIMEOUT</p></td>
+</tr>
+<tr class="row-odd"><td><p>–api-keys-db-path</p></td>
+<td><p>使用容器内的指定路径作为本地 API 密钥数据库路径，可为绝对路径或相对路径</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">db/api_keys.db</span></code></p></td>
+<td><p>LT_API_KEYS_DB_PATH</p></td>
+</tr>
+<tr class="row-even"><td><p>–api-keys-remote</p></td>
+<td><p>使用远程端点验证 API 密钥，而不是使用本地数据库</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">空（改为使用本地数据库）</span></code></p></td>
+<td><p>LT_API_KEYS_REMOTE</p></td>
+</tr>
+<tr class="row-odd"><td><p>–get-api-key-link</p></td>
+<td><p>在界面中显示获取 API 密钥的链接</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">空（Web</span> <span class="pre">UI</span> <span class="pre">中不显示链接）</span></code></p></td>
+<td><p>LT_GET_API_KEY_LINK</p></td>
+</tr>
+<tr class="row-even"><td><p>–shared-storage</p></td>
+<td><p>设置用于多进程数据共享的共享存储 URI（例如在使用 gunicorn 时）</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">memory://</span></code></p></td>
+<td><p>LT_SHARED_STORAGE</p></td>
+</tr>
+<tr class="row-odd"><td><p>–secondary</p></td>
+<td><p>将该实例标记为副本节点，用于多节点部署中避免与主节点冲突</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">主节点</span></code></p></td>
+<td><p>LT_SECONDARY</p></td>
+</tr>
+<tr class="row-even"><td><p>–load-only</p></td>
+<td><p>指定可用语言</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">空（使用</span> <span class="pre">argostranslate</span> <span class="pre">中的全部语言）</span></code></p></td>
+<td><p>LT_LOAD_ONLY</p></td>
+</tr>
+<tr class="row-odd"><td><p>–threads</p></td>
+<td><p>设置线程数量</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td><p>LT_THREADS</p></td>
+</tr>
+<tr class="row-even"><td><p>–metrics-auth-token</p></td>
+<td><p>通过 Authorization Bearer 令牌保护 <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> 端点，仅允许拥有有效令牌的客户端访问</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">空（不启用身份验证）</span></code></p></td>
+<td><p>LT_METRICS_AUTH_TOKEN</p></td>
+</tr>
+<tr class="row-odd"><td><p>–url-prefix</p></td>
+<td><p>为 URL 添加前缀，例如：example.com:5000/url-prefix/</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/</span></code></p></td>
+<td><p>LT_URL_PREFIX</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="id8">
+<h3>说明<a class="headerlink" href="#id8" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>每个参数都可以通过对应的环境变量来设置。环境变量会覆盖默认值，但其优先级低于命令行参数。环境变量特别适合在 Docker 中使用。环境变量的名称为对应参数名称的大写蛇形命名（upper-snake-case），并加上 <code class="docutils literal notranslate"><span class="pre">LT</span></code> 前缀。</p></li>
+<li><p>若要启用 API 密钥机制，请将 <code class="docutils literal notranslate"><span class="pre">--req-limit</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">0</span></code> 并添加 <code class="docutils literal notranslate"><span class="pre">--api-keys</span></code> 参数。没有有效 API 密钥的请求将被拒绝。</p></li>
+<li><p>启用 <code class="docutils literal notranslate"><span class="pre">--update-models</span></code> 参数时，将在程序启动时强制更新模型，无论是否有更新可用。</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id9">
+<h2>更新<a class="headerlink" href="#id9" title="Link to this heading">¶</a></h2>
+<section id="id10">
+<h3>软件<a class="headerlink" href="#id10" title="Link to this heading">¶</a></h3>
+<p>如果你是通过 pip 安装的：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>libretranslate
+</pre></div>
+</div>
+<p>如果你使用的是 Docker：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>libretranslate/libretranslate
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h3>语言模型<a class="headerlink" href="#id11" title="Link to this heading">¶</a></h3>
+<p>通过添加 <code class="docutils literal notranslate"><span class="pre">--update-models</span></code> 参数启动程序。例如：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>libretranslate<span class="w"> </span>--update-models
+</pre></div>
+</div>
+<p>或：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh<span class="w"> </span>--update-models
+</pre></div>
+</div>
+<p>你也可以直接运行 <code class="docutils literal notranslate"><span class="pre">scripts/install_models.py</span></code> 脚本来安装模型。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="wsgi-gunicorn">
+<h2>使用 WSGI 与 Gunicorn 运行<a class="headerlink" href="#wsgi-gunicorn" title="Link to this heading">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>gunicorn
+gunicorn<span class="w"> </span>--bind<span class="w"> </span><span class="m">0</span>.0.0.0:5000<span class="w"> </span><span class="s1">&#39;wsgi:app&#39;</span>
+</pre></div>
+</div>
+<p>你也可以通过以下方式将应用参数直接传递给 Gunicorn：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gunicorn<span class="w"> </span>--bind<span class="w"> </span><span class="m">0</span>.0.0.0:5000<span class="w"> </span><span class="s1">&#39;wsgi:app(api_keys=True)&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="kubernetes">
+<h2>Kubernetes 部署<a class="headerlink" href="#kubernetes" title="Link to this heading">¶</a></h2>
+<p>参见 <a class="reference external" href="https://jmrobles.medium.com/libretranslate-your-own-translation-service-on-kubernetes-b46c3e1af630">JM Robles 的 Medium 文章</a> 以及由 &#64;rasos 改进的 <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/blob/main/k8s.yaml">k8s.yaml</a>。</p>
+<section id="helm-chart">
+<h3>Helm Chart<a class="headerlink" href="#helm-chart" title="Link to this heading">¶</a></h3>
+<p>基于 &#64;rasos 的工作，你现在可以通过 Helm 在 Kubernetes 上安装 LibreTranslate。</p>
+<p>一个 Helm Chart 已在 <a class="reference external" href="https://github.com/LibreTranslate/helm-chart/">helm-chart 仓库</a> 中提供，内含更多安装细节。</p>
+<p>你可以通过以下命令快速在 Kubernetes 上使用 Helm 安装 LibreTranslate：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>libretranslate<span class="w"> </span>https://libretranslate.github.io/helm-chart/
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>search<span class="w"> </span>repo<span class="w"> </span>libretranslate
+
+helm<span class="w"> </span>install<span class="w"> </span>libretranslate<span class="w"> </span>libretranslate/libretranslate<span class="w"> </span>--namespace<span class="w"> </span>libretranslate<span class="w"> </span>--create-namespace
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id12">
+<h2>管理 API 密钥<a class="headerlink" href="#id12" title="Link to this heading">¶</a></h2>
+<p>LibreTranslate 支持用户级别的限流配额。例如，你可以为用户分配 API 密钥，以允许他们享有更高的每分钟请求上限（前提是你设置了 <code class="docutils literal notranslate"><span class="pre">--req-limit</span></code>）。默认情况下，所有用户都受 <code class="docutils literal notranslate"><span class="pre">--req-limit</span></code> 的限制，但通过向 REST 接口传递可选参数 <code class="docutils literal notranslate"><span class="pre">api_key</span></code>，用户可获得更高的请求限额。你还可以为特定密钥设置字符限制，从而绕过默认的 <code class="docutils literal notranslate"><span class="pre">--char-limit</span></code> 设置。</p>
+<p>要启用 API 密钥功能，只需使用 <code class="docutils literal notranslate"><span class="pre">--api-keys</span></code> 参数启动 LibreTranslate。如果你通过 <code class="docutils literal notranslate"><span class="pre">--api-keys-db-path</span></code> 参数修改了 API 密钥数据库路径，那么在使用 <code class="docutils literal notranslate"><span class="pre">ltmanage</span> <span class="pre">keys</span></code> 命令时也必须通过相同参数指定路径。</p>
+<section id="id13">
+<h3>添加新密钥<a class="headerlink" href="#id13" title="Link to this heading">¶</a></h3>
+<p>要生成一个每分钟限 120 次请求的 API 密钥：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ltmanage<span class="w"> </span>keys<span class="w"> </span>add<span class="w"> </span><span class="m">120</span>
+</pre></div>
+</div>
+<p>要生成一个每分钟限 120 次请求、且每次最多允许 5,000 字符的 API 密钥：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ltmanage<span class="w"> </span>keys<span class="w"> </span>add<span class="w"> </span><span class="m">120</span><span class="w"> </span>--char-limit<span class="w"> </span><span class="m">5000</span>
+</pre></div>
+</div>
+<p>如果你修改了 API 密钥数据库路径：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ltmanage<span class="w"> </span>keys<span class="w"> </span>--api-keys-db-path<span class="w"> </span>path/to/db/dbName.db<span class="w"> </span>add<span class="w"> </span><span class="m">120</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id14">
+<h3>删除密钥<a class="headerlink" href="#id14" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ltmanage<span class="w"> </span>keys<span class="w"> </span>remove<span class="w"> </span>&lt;api-key&gt;
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id15">
+<h3>查看密钥<a class="headerlink" href="#id15" title="Link to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ltmanage<span class="w"> </span>keys
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="prometheus">
+<h2>Prometheus 指标监控<a class="headerlink" href="#prometheus" title="Link to this heading">¶</a></h2>
+<p>当你在启动时添加 <code class="docutils literal notranslate"><span class="pre">--metrics</span></code> 参数（默认关闭）后，LibreTranslate 将支持 Prometheus 的 <a class="reference external" href="https://prometheus.io/docs/instrumenting/exporters/">exporter</a> 功能。启用后，实例上会挂载一个 <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> 端点：</p>
+<p><a class="reference external" href="http://localhost:5000/metrics">http://localhost:5000/metrics</a></p>
+<p>返回示例（PromQL）：</p>
+<div class="highlight-promql notranslate"><div class="highlight"><pre><span></span><span class="c1"># HELP libretranslate_http_requests_in_flight Multiprocess metric</span>
+<span class="c1"># TYPE libretranslate_http_requests_in_flight gauge</span>
+<span class="nv">libretranslate_http_requests_in_flight</span><span class="p">{</span><span class="nl">api_key</span><span class="o">=</span><span class="p">&quot;&quot;,</span><span class="nl">endpoint</span><span class="o">=</span><span class="p">&quot;</span><span class="s">/translate</span><span class="p">&quot;,</span><span class="nl">request_ip</span><span class="o">=</span><span class="p">&quot;</span><span class="s">127.0.0.1</span><span class="p">&quot;}</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="c1"># HELP libretranslate_http_request_duration_seconds Multiprocess metric</span>
+<span class="c1"># TYPE libretranslate_http_request_duration_seconds summary</span>
+<span class="nv">libretranslate_http_request_duration_seconds_count</span><span class="p">{</span><span class="nl">api_key</span><span class="o">=</span><span class="p">&quot;&quot;,</span><span class="nl">endpoint</span><span class="o">=</span><span class="p">&quot;</span><span class="s">/translate</span><span class="p">&quot;,</span><span class="nl">request_ip</span><span class="o">=</span><span class="p">&quot;</span><span class="s">127.0.0.1</span><span class="p">&quot;,</span><span class="nl">status</span><span class="o">=</span><span class="p">&quot;</span><span class="s">200</span><span class="p">&quot;}</span><span class="w"> </span><span class="mf">0.0</span>
+<span class="nv">libretranslate_http_request_duration_seconds_sum</span><span class="p">{</span><span class="nl">api_key</span><span class="o">=</span><span class="p">&quot;&quot;,</span><span class="nl">endpoint</span><span class="o">=</span><span class="p">&quot;</span><span class="s">/translate</span><span class="p">&quot;,</span><span class="nl">request_ip</span><span class="o">=</span><span class="p">&quot;</span><span class="s">127.0.0.1</span><span class="p">&quot;,</span><span class="nl">status</span><span class="o">=</span><span class="p">&quot;</span><span class="s">200</span><span class="p">&quot;}</span><span class="w"> </span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>你可以通过如下方式配置 <code class="docutils literal notranslate"><span class="pre">prometheus.yml</span></code> 以抓取指标：</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">scrape_configs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;libretranslate&quot;</span>
+
+<span class="w">    </span><span class="c1"># 仅在启用 --metrics-auth-token 时需要</span>
+<span class="w">    </span><span class="c1">#authorization:</span>
+<span class="w">    </span><span class="c1">#credentials: &quot;mytoken&quot;</span>
+
+<span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;localhost:5000&quot;</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<p>为了保护 <code class="docutils literal notranslate"><span class="pre">/metrics</span></code> 端点，可以使用参数 <code class="docutils literal notranslate"><span class="pre">--metrics-auth-token</span> <span class="pre">mytoken</span></code>。</p>
+<p>如果你使用 Gunicorn，需创建一个用于存放多进程指标数据的目录，并设置环境变量 <code class="docutils literal notranslate"><span class="pre">PROMETHEUS_MULTIPROC_DIR</span></code>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/tmp/prometheus_data
+rm<span class="w"> </span>/tmp/prometheus_data/*
+<span class="nb">export</span><span class="w"> </span><span class="nv">PROMETHEUS_MULTIPROC_DIR</span><span class="o">=</span>/tmp/prometheus_data
+gunicorn<span class="w"> </span>-c<span class="w"> </span>scripts/gunicorn_conf.py<span class="w"> </span>--bind<span class="w"> </span><span class="m">0</span>.0.0.0:5000<span class="w"> </span><span class="s1">&#39;wsgi:app(metrics=True)&#39;</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="language-bindings">
+<h2>语言绑定（Language Bindings）<a class="headerlink" href="#language-bindings" title="Link to this heading">¶</a></h2>
+<p>你可以通过以下客户端库调用 LibreTranslate API：</p>
+<ul class="simple">
+<li><p>Rust: <a class="reference external" href="https://github.com/DefunctLizard/libretranslate-rs">https://github.com/DefunctLizard/libretranslate-rs</a></p></li>
+<li><p>Node.js: <a class="reference external" href="https://github.com/franciscop/translate">https://github.com/franciscop/translate</a></p></li>
+<li><p>TypeScript: <a class="reference external" href="https://github.com/tderflinger/libretranslate-ts">https://github.com/tderflinger/libretranslate-ts</a></p></li>
+<li><p>.Net: <a class="reference external" href="https://github.com/sigaloid/LibreTranslate.Net">https://github.com/sigaloid/LibreTranslate.Net</a></p></li>
+<li><p>Go: <a class="reference external" href="https://github.com/SnakeSel/libretranslate">https://github.com/SnakeSel/libretranslate</a></p></li>
+<li><p>Python: <a class="reference external" href="https://github.com/argosopentech/LibreTranslate-py">https://github.com/argosopentech/LibreTranslate-py</a></p></li>
+<li><p>PHP: <a class="reference external" href="https://github.com/jefs42/libretranslate">https://github.com/jefs42/libretranslate</a></p></li>
+<li><p>C++: <a class="reference external" href="https://github.com/argosopentech/LibreTranslate-cpp">https://github.com/argosopentech/LibreTranslate-cpp</a></p></li>
+<li><p>Swift: <a class="reference external" href="https://github.com/wacumov/libretranslate">https://github.com/wacumov/libretranslate</a></p></li>
+<li><p>Unix: <a class="reference external" href="https://github.com/argosopentech/LibreTranslate-sh">https://github.com/argosopentech/LibreTranslate-sh</a></p></li>
+<li><p>Shell: <a class="reference external" href="https://github.com/Hayao0819/Hayao-Tools/tree/master/libretranslate-sh">https://github.com/Hayao0819/Hayao-Tools/tree/master/libretranslate-sh</a></p></li>
+<li><p>Java: <a class="reference external" href="https://github.com/suuft/libretranslate-java">https://github.com/suuft/libretranslate-java</a></p></li>
+<li><p>Ruby: <a class="reference external" href="https://github.com/noesya/libretranslate">https://github.com/noesya/libretranslate</a></p></li>
+<li><p>R: <a class="reference external" href="https://github.com/myanesp/libretranslateR">https://github.com/myanesp/libretranslateR</a></p></li>
+</ul>
+</section>
+<section id="discourse">
+<h2>Discourse 插件<a class="headerlink" href="#discourse" title="Link to this heading">¶</a></h2>
+<p>你可以使用 <a class="reference external" href="https://github.com/discourse/discourse-translator">官方 Discourse 翻译插件</a> 通过 LibreTranslate 翻译 <a class="reference external" href="https://discourse.org">Discourse</a> 论坛主题。安装方法是修改 <code class="docutils literal notranslate"><span class="pre">/var/discourse/containers/app.yml</span></code> 文件：</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1">## 插件写在这里</span>
+<span class="c1">## 详见 https://meta.discourse.org/t/19157</span>
+<span class="nt">hooks</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">after_code</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">exec</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cd</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$home/plugins</span>
+<span class="w">        </span><span class="nt">cmd</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/discourse/docker_manager.git</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">git clone https://github.com/discourse/discourse-translator</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>然后运行 <code class="docutils literal notranslate"><span class="pre">./launcher</span> <span class="pre">rebuild</span> <span class="pre">app</span></code>。接着在 Discourse 管理面板中选择 “LibreTranslate” 作为翻译提供者，并配置相应的接口参数。</p>
+<p>你可以在这个<a class="reference external" href="https://community.libretranslate.com/t/have-you-considered-adding-the-libretranslate-discourse-translator-multilingual-to-this-forum/766">页面</a>上查看实际效果。</p>
+</section>
+<hr class="docutils" />
+<section id="id16">
+<h2>移动应用<a class="headerlink" href="#id16" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://codeberg.org/BeoCode/LibreTranslator">LibreTranslator</a>：一个 Android 应用，可在 <a class="reference external" href="https://play.google.com/store/apps/details?id=de.beowulf.libretranslater">Play 商店</a> 和 <a class="reference external" href="https://f-droid.org/packages/de.beowulf.libretranslater/">F-Droid 商店</a> 获取，使用 LibreTranslate API。</p></li>
+<li><p><a class="reference external" href="https://github.com/you-apps/TranslateYou">Translate You</a>：一个专注隐私的翻译应用，基于 MD3 设计，可在 <a class="reference external" href="https://f-droid.org/packages/com.bnyro.translate/">F-Droid 商店</a> 获取，支持包括 LibreTranslate 在内的多个提供者。</p></li>
+<li><p><a class="reference external" href="https://github.com/viktorkalyniuk/LiTranslate-iOS">LiTranslate</a>：一个 iOS 应用，可在 <a class="reference external" href="https://apps.apple.com/us/app/litranslate/id1644385339">App Store</a> 下载，使用 LibreTranslate API。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id17">
+<h2>网页浏览器支持<a class="headerlink" href="#id17" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://minbrowser.org/">minbrowser</a> 是一个集成了 <a class="reference external" href="https://github.com/argosopentech/argos-translate/discussions/158#discussioncomment-1141551">LibreTranslate 支持</a> 的网页浏览器。</p></li>
+<li><p>LibreTranslate 的 Firefox 插件<a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/issues/55">仍在开发中</a>。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id18">
+<h2>公共镜像站点<a class="headerlink" href="#id18" title="Link to this heading">¶</a></h2>
+<p>以下是一些公共的 LibreTranslate 实例，有些需要 API 密钥。如需添加新地址，请提交 pull request。</p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>URL</p></th>
+<th class="head"><p>是否需要 API 密钥</p></th>
+<th class="head"><p>链接</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://libretranslate.com">libretranslate.com</a></p></td>
+<td><p>✅</p></td>
+<td><p>[ <a class="reference external" href="https://portal.libretranslate.com">获取 API 密钥</a> ] [ <a class="reference external" href="https://status.libretranslate.com/">服务状态</a> ]</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://translate.flossboxin.org.in/">translate.flossboxin.org.in</a></p></td>
+<td><p>❌</p></td>
+<td><p>[ <a class="reference external" href="mailto:dev&#37;&#52;&#48;flossboxin&#46;org&#46;in">联系邮箱</a> ]</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://lt.blitzw.in/">lt.blitzw.in</a></p></td>
+<td><p>❌</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="tor-i2p">
+<h2>TOR / I2P 镜像<a class="headerlink" href="#tor-i2p" title="Link to this heading">¶</a></h2>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="http://lt.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion/">lt.vernccvbvyi5qhfzyqengccj7lkove6bjot2xhh5kajhwvidqafczrad.onion</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://vernf45n7mxwqnp5riaax7p67pwcl7wcefdcnqqvim7ckdx4264a.b32.i2p/">lt.vern.i2p</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id19">
+<h2>添加新语言模型<a class="headerlink" href="#id19" title="Link to this heading">¶</a></h2>
+<p>你可以通过以下两种方式创建新的语言模型：</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/LibreTranslate/Locomotive">Locomotive</a></p></li>
+<li><p><a class="reference external" href="https://github.com/argosopentech/argos-train">Argos Train</a>（<a class="reference external" href="https://www.youtube.com/watch?v=Vj_qgnhOEwg">视频教程</a>）</p></li>
+</ul>
+<p>大部分训练数据来自开源的平行语料库 <a class="reference external" href="http://opus.nlpl.eu/">Opus</a>，也可以参考 <a class="reference external" href="https://nllu.libretranslate.com">NLLU</a>。</p>
+</section>
+<hr class="docutils" />
+<section id="id20">
+<h2>本地化（界面语言支持）<a class="headerlink" href="#id20" title="Link to this heading">¶</a></h2>
+<p>LibreTranslate 的网页界面支持所有其翻译能力涵盖的语言，并且（粗略地）可以<a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/blob/main/scripts/update_locales.py">翻译自己</a>！部分语言尚未被人工校审，因此不会出现在界面语言列表中。你可以通过开启 <code class="docutils literal notranslate"><span class="pre">--debug</span></code> 模式启用所有语言。</p>
+<p>如果你想帮助改进或校对 UI 翻译：</p>
+<ul class="simple">
+<li><p>前往 <a class="reference external" href="https://hosted.weblate.org/projects/libretranslate/app/#translations">https://hosted.weblate.org/projects/libretranslate/app/#translations</a>，所有更改会自动推送至代码库。</p></li>
+<li><p>校审或修改所有字符串后，提交 pull request，修改 <code class="docutils literal notranslate"><span class="pre">libretranslate/locales/{code}/meta.json</span></code> 文件：</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w"> </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;Language&gt;&quot;</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;reviewed&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">&lt;</span><span class="mi">--</span><span class="w"> </span><span class="err">将此项从</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">改为</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="ui">
+<h3>UI 语言<a class="headerlink" href="#ui" title="Link to this heading">¶</a></h3>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Language</p></th>
+<th class="head"><p>Reviewed</p></th>
+<th class="head"><p>Weblate Link</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Arabic</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/ar/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Azerbaijani</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/az/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Basque</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/eu/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Chinese</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/zh/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Chinese (Traditional)</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/zh_Hant/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Czech</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/cs/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Danish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/da/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Dutch</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/nl/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>English</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/projects/libretranslate/app/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Esperanto</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/eo/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Finnish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/fi/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>French</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/fr/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>German</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/de/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Greek</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/el/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Hebrew</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/he/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Hindi</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/hi/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Hungarian</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/hu/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Indonesian</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/id/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Irish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/ga/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Italian</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/it/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Japanese</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/ja/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Kabyle</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/projects/libretranslate/app/kab/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Korean</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/ko/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Occitan</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/oc/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Persian</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/fa/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Polish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/pl/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Portuguese</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/pt/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Russian</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/ru/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Slovak</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/sk/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Spanish</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/es/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Swedish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/sv/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Turkish</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/tr/">Edit</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Ukrainian</p></td>
+<td><p>:heavy_check_mark:</p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/uk/">Edit</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Vietnamese</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://hosted.weblate.org/translate/libretranslate/app/vi/">Edit</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="roadmap">
+<h2>路线图（Roadmap）<a class="headerlink" href="#roadmap" title="Link to this heading">¶</a></h2>
+<p>欢迎通过提交 Pull Request 来参与改进！</p>
+<ul class="simple">
+<li><p>[ ] 为所有编程语言添加语言绑定</p></li>
+<li><p>[ ] <a class="reference external" href="https://community.libretranslate.com/t/the-best-way-to-train-models/172">改进翻译效果</a></p></li>
+</ul>
+<p>其他建议也非常欢迎！</p>
+</section>
+<hr class="docutils" />
+<section id="faq">
+<h2>常见问题（FAQ）<a class="headerlink" href="#faq" title="Link to this heading">¶</a></h2>
+<section id="libretranslate-com-api">
+<h3>我可以在生产环境的应用中使用 libretranslate.com 上的 API 服务吗？<a class="headerlink" href="#libretranslate-com-api" title="Link to this heading">¶</a></h3>
+<p>简短地说，可以，<strong><a class="reference external" href="https://portal.libretranslate.com">但你需要购买 API 密钥</a></strong>。当然，你也可以免费在自己的服务器上部署 LibreTranslate。</p>
+</section>
+<hr class="docutils" />
+<section id="libretranslate-com">
+<h3>为什么 libretranslate.com 上的部分翻译与自托管版本不同？<a class="headerlink" href="#libretranslate-com" title="Link to this heading">¶</a></h3>
+<p>语言模型默认从 <a class="reference external" href="https://github.com/argosopentech/argospm-index">argos-index</a> 加载。我们有时会在 libretranslate.com 上部署尚未加入 argos-index 的模型，例如从 OPUS 转换的模型（<a class="reference external" href="https://community.libretranslate.com/t/opus-mt-language-models-port-thread/757">相关讨论</a>）。</p>
+</section>
+<hr class="docutils" />
+<section id="id21">
+<h3>语言模型存储在哪里？<a class="headerlink" href="#id21" title="Link to this heading">¶</a></h3>
+<p>在 <code class="docutils literal notranslate"><span class="pre">$HOME/.local/share/argos-translate/packages</span></code> 目录下。Windows 系统中为 <code class="docutils literal notranslate"><span class="pre">C:\Users\youruser\.local\share\argos-translate\packages</span></code>。</p>
+</section>
+<hr class="docutils" />
+<section id="apache2-caddy-libretranslate">
+<h3>我可以在反向代理（如 Apache2 或 Caddy）后面运行 LibreTranslate 吗？<a class="headerlink" href="#apache2-caddy-libretranslate" title="Link to this heading">¶</a></h3>
+<p>可以，下面是使用 Apache2 和 Caddy 配置子域名（带 HTTPS 证书）反向代理到本地 Docker 上运行的 LibreTranslate 的示例：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-ti<span class="w"> </span>--rm<span class="w"> </span>-p<span class="w"> </span><span class="m">127</span>.0.0.1:5000:5000<span class="w"> </span>libretranslate/libretranslate
+</pre></div>
+</div>
+<p>如果你希望从 <code class="docutils literal notranslate"><span class="pre">domain.tld:5000</span></code> 也能访问（除了 <code class="docutils literal notranslate"><span class="pre">subdomain.domain.tld</span></code>），可以去掉上述命令中的 <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>，这有助于排查是否是 Apache2 或 Docker 容器的问题。</p>
+<p>如果希望 Docker 容器在开机时自动启动，可加上 <code class="docutils literal notranslate"><span class="pre">--restart</span> <span class="pre">unless-stopped</span></code> 参数。</p>
+<details>
+<summary>Apache 配置示例</summary>
+<br>
+<p>请将 <code class="docutils literal notranslate"><span class="pre">[YOUR_DOMAIN]</span></code> 替换为你的完整域名，例如 <code class="docutils literal notranslate"><span class="pre">translate.domain.tld</span></code> 或 <code class="docutils literal notranslate"><span class="pre">libretranslate.domain.tld</span></code>。</p>
+<p>如需记录请求日志，请取消 <code class="docutils literal notranslate"><span class="pre">ErrorLog</span></code> 和 <code class="docutils literal notranslate"><span class="pre">CustomLog</span></code> 行前的 <code class="docutils literal notranslate"><span class="pre">#</span></code> 注释。</p>
+<div class="highlight-ApacheConf notranslate"><div class="highlight"><pre><span></span><span class="c"># Libretranslate</span>
+
+<span class="c"># HTTP 跳转至 HTTPS</span>
+<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>http://[YOUR_DOMAIN]
+<span class="w">    </span><span class="nb">Redirect</span><span class="w"> </span>/<span class="w"> </span>https://[YOUR_DOMAIN]
+<span class="w">    </span><span class="c"># ErrorLog ${APACHE_LOG_DIR}/error.log</span>
+<span class="w">    </span><span class="c"># CustomLog ${APACHE_LOG_DIR}/tr-access.log combined</span>
+<span class="nt">&lt;/VirtualHost&gt;</span>
+
+<span class="c"># HTTPS</span>
+<span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:443</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>https://[YOUR_DOMAIN]
+
+<span class="w">    </span><span class="nb">ProxyPass</span><span class="w"> </span>/<span class="w"> </span>http://127.0.0.1:5000/
+<span class="w">    </span><span class="nb">ProxyPassReverse</span><span class="w"> </span>/<span class="w"> </span>http://127.0.0.1:5000/
+<span class="w">    </span><span class="nb">ProxyPreserveHost</span><span class="w"> </span><span class="k">On</span>
+
+<span class="w">    </span><span class="nb">SSLEngine</span><span class="w"> </span><span class="k">on</span>
+<span class="w">    </span><span class="nb">SSLCertificateFile</span><span class="w"> </span><span class="sx">/etc/letsencrypt/live/</span>[YOUR_DOMAIN]/fullchain.pem
+<span class="w">    </span><span class="nb">SSLCertificateKeyFile</span><span class="w"> </span><span class="sx">/etc/letsencrypt/live/</span>[YOUR_DOMAIN]/privkey.pem
+<span class="w">    </span><span class="nb">SSLCertificateChainFile</span><span class="w"> </span><span class="sx">/etc/letsencrypt/live/</span>[YOUR_DOMAIN]/fullchain.pem
+
+<span class="w">    </span><span class="c"># ErrorLog ${APACHE_LOG_DIR}/tr-error.log</span>
+<span class="w">    </span><span class="c"># CustomLog ${APACHE_LOG_DIR}/tr-access.log combined</span>
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+<p>可以将以上配置添加到已有站点配置中，或新建文件 <code class="docutils literal notranslate"><span class="pre">/etc/apache2/sites-available/new-site.conf</span></code>，然后运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>a2ensite<span class="w"> </span>new-site.conf
+</pre></div>
+</div>
+<p>如需获取 HTTPS 子域名证书，安装 <code class="docutils literal notranslate"><span class="pre">certbot</span></code>（推荐 snap 包），并运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>certbot<span class="w"> </span>certonly<span class="w"> </span>--manual<span class="w"> </span>--preferred-challenges<span class="w"> </span>dns
+</pre></div>
+</div>
+<p>输入你的信息（例如 <code class="docutils literal notranslate"><span class="pre">subdomain.domain.tld</span></code>），按提示添加 DNS TXT 记录。证书将保存到 <code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt/live/{subdomain.domain.tld}/</span></code>。</p>
+<p>如果暂时不使用 HTTPS，也可以注释掉配置文件中的 SSL 相关行。</p>
+</details>
+<details>
+<summary>Caddy 配置示例</summary>
+<br>
+<p>请将 <code class="docutils literal notranslate"><span class="pre">[YOUR_DOMAIN]</span></code> 替换为你的完整域名，例如 <code class="docutils literal notranslate"><span class="pre">translate.domain.tld</span></code> 或 <code class="docutils literal notranslate"><span class="pre">libretranslate.domain.tld</span></code>。</p>
+<div class="highlight-Caddyfile notranslate"><div class="highlight"><pre><span></span># Libretranslate
+[YOUR_DOMAIN] {
+  reverse_proxy localhost:5000
+}
+</pre></div>
+</div>
+<p>将此配置加入现有的 Caddyfile，或保存为单独的 <code class="docutils literal notranslate"><span class="pre">Caddyfile</span></code> 文件，并在同一目录中运行：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>caddy<span class="w"> </span>reload
+</pre></div>
+</div>
+</details>
+<details>
+<summary>NGINX 配置示例</summary>
+<br>
+<p>请将 <code class="docutils literal notranslate"><span class="pre">[YOUR_DOMAIN]</span></code> 替换为你的完整域名，例如 <code class="docutils literal notranslate"><span class="pre">translate.domain.tld</span></code> 或 <code class="docutils literal notranslate"><span class="pre">libretranslate.domain.tld</span></code>。</p>
+<p>如需禁用日志记录，请移除 <code class="docutils literal notranslate"><span class="pre">access_log</span></code> 和 <code class="docutils literal notranslate"><span class="pre">error_log</span></code> 行前的 <code class="docutils literal notranslate"><span class="pre">#</span></code>。</p>
+<div class="highlight-NginxConf notranslate"><div class="highlight"><pre><span></span>server {
+  listen 80;
+  server_name [YOUR_DOMAIN];
+  return 301 https://$server_name$request_uri;
+}
+
+server {
+  listen 443 http2 ssl;
+  server_name [YOUR_DOMAIN];
+
+  #access_log off;
+  #error_log off;
+
+  # SSL Section
+  ssl_certificate /etc/letsencrypt/live/[YOUR_DOMAIN]/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/[YOUR_DOMAIN]/privkey.pem;
+
+  ssl_protocols TLSv1.2 TLSv1.3;
+
+  # Using the recommended cipher suite from: https://wiki.mozilla.org/Security/Server_Side_TLS
+  ssl_ciphers &#39;ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384&#39;;
+
+  ssl_session_timeout 10m;
+  ssl_session_cache shared:MozSSL:10m;  # about 40000 sessions
+  ssl_session_tickets off;
+
+  # Specifies a curve for ECDHE ciphers.
+  ssl_ecdh_curve prime256v1;
+  # Server should determine the ciphers, not the client
+  ssl_prefer_server_ciphers on;
+
+
+  # Header section
+  add_header Strict-Transport-Security  &quot;max-age=31536000; includeSubDomains; preload&quot; always;
+  add_header Referrer-Policy            &quot;strict-origin&quot; always;
+
+  add_header X-Frame-Options            &quot;SAMEORIGIN&quot;    always;
+  add_header X-XSS-Protection           &quot;1; mode=block&quot; always;
+  add_header X-Content-Type-Options     &quot;nosniff&quot;       always;
+  add_header X-Download-Options         &quot;noopen&quot;        always;
+  add_header X-Robots-Tag               &quot;none&quot;          always;
+
+  add_header Feature-Policy             &quot;microphone &#39;none&#39;; camera &#39;none&#39;; geolocation &#39;none&#39;;&quot;  always;
+  # Newer header but not everywhere supported
+  add_header Permissions-Policy         &quot;microphone=(), camera=(), geolocation=()&quot; always;
+
+  # Remove X-Powered-By, which is an information leak
+  fastcgi_hide_header X-Powered-By;
+
+  # Do not send nginx server header
+  server_tokens off;
+
+  # GZIP Section
+  gzip on;
+  gzip_disable &quot;msie6&quot;;
+
+  gzip_vary on;
+  gzip_proxied any;
+  gzip_comp_level 6;
+  gzip_buffers 16 8k;
+  gzip_http_version 1.1;
+  gzip_min_length 256;
+  gzip_types text/xml text/javascript font/ttf font/eot font/otf application/x-javascript application/atom+xml application/javascript application/json application/manifest+json application/rss+xml application/x-web-app-manifest+json application/xhtml+xml application/xml image/svg+xml image/x-icon text/css text/plain;
+
+  location / {
+      proxy_pass http://127.0.0.1:5000/;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
+      client_max_body_size 0;
+  }
+}
+
+</pre></div>
+</div>
+<p>将其添加到现有的 NGINX 配置中或将其保存为 <code class="docutils literal notranslate"><span class="pre">/etc/nginx/site-enabled</span></code> 目录中的 <code class="docutils literal notranslate"><span class="pre">libretranslate</span></code> ，然后运行 ​​<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nginx</span> <span class="pre">-s</span> <span class="pre">reload</span></code>。</p>
+</details>
+</section>
+<section id="systemd-libretranslate-pip-python">
+<h3>我可以使用 systemd 来运行 LibreTranslate（即默认使用 pip/python 安装的版本）吗？<a class="headerlink" href="#systemd-libretranslate-pip-python" title="Link to this heading">¶</a></h3>
+<p>可以，只需在 <code class="docutils literal notranslate"><span class="pre">/etc/systemd/system</span></code> 中创建一个服务文件，并启用它在开机启动。</p>
+<p><code class="docutils literal notranslate"><span class="pre">.env</span></code>（环境变量）文件是否需要取决于你的部署方式。将以下内容写入服务文件（根据需要修改路径等参数），文件命名为 <code class="docutils literal notranslate"><span class="pre">libretranslate.service</span></code>：</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">LibreTranslate</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">User</span><span class="o">=</span><span class="s">root</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">idle</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">&quot;PATH=/usr/local/lib/python3.11/dist-packages/libretranslate&quot;</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/usr/bin/python3 /usr/local/bin/libretranslate</span>
+<span class="na">EnvironmentFile</span><span class="o">=</span><span class="s">/usr/local/lib/python3.11/dist-packages/libretranslate/.env</span>
+<span class="na">ExecReload</span><span class="o">=</span><span class="s">/bin/kill -s HUP $MAINPID</span>
+<span class="na">KillMode</span><span class="o">=</span><span class="s">mixed</span>
+<span class="na">TimeoutStopSec</span><span class="o">=</span><span class="s">1</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</pre></div>
+</div>
+<p>保存文件后，运行以下命令以重新加载守护进程并启动服务：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>daemon-reload
+systemctl<span class="w"> </span>start<span class="w"> </span>libretranslate.service
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>libretranslate.service
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id22">
+<h3>我可以进行批量翻译吗？<a class="headerlink" href="#id22" title="Link to this heading">¶</a></h3>
+<p>可以，将字符串数组而不是单个字符串传递给 <code class="docutils literal notranslate"><span class="pre">q</span></code> 字段即可：</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s2">&quot;https://libretranslate.com/translate&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;POST&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">q</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;world&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;es&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;Content-Type&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;application/json&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">});</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">());</span>
+<span class="c1">// {</span>
+<span class="c1">//     &quot;translatedText&quot;: [</span>
+<span class="c1">//         &quot;Hola&quot;,</span>
+<span class="c1">//         &quot;mundo&quot;</span>
+<span class="c1">//     ]</span>
+<span class="c1">// }</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="contributing">
+<h2>贡献（Contributing）<a class="headerlink" href="#contributing" title="Link to this heading">¶</a></h2>
+<p>欢迎各种贡献！以下是一些建议方向：</p>
+<ul class="simple">
+<li><p>使用 <a class="reference external" href="https://github.com/LibreTranslate/Locomotive">Locomotive</a> 训练新的语言模型。例如，我们希望为 <a class="reference external" href="https://community.libretranslate.com/t/help-wanted-improve-en-de-translation/935">德语</a> 和其他许多语言改进神经网络翻译质量。</p></li>
+<li><p>有能力超越我们现有模型的性能吗？训练一个新的语言模型并来一场性能比拼吧！提交模型的方法是：在 <a class="reference external" href="https://community.libretranslate.com/">社区论坛</a> 发帖，附上 <code class="docutils literal notranslate"><span class="pre">.argosmodel</span></code> 文件的下载链接，并提供该模型翻译的一些示例文本。</p></li>
+<li><p>从 <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/issues">issue 列表</a> 中选择一个问题着手解决。</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="credits">
+<h2>鸣谢（Credits）<a class="headerlink" href="#credits" title="Link to this heading">¶</a></h2>
+<p>本项目主要得益于 <a class="reference external" href="https://github.com/argosopentech/argos-translate">Argos Translate</a>，它是翻译引擎的核心。</p>
+</section>
+<hr class="docutils" />
+<section id="license">
+<h2>许可证（License）<a class="headerlink" href="#license" title="Link to this heading">¶</a></h2>
+<p>本项目遵循 <a class="reference external" href="https://www.gnu.org/licenses/agpl-3.0.en.html">GNU Affero 通用公共许可证 第三版（AGPL v3）</a></p>
+</section>
+<hr class="docutils" />
+<section id="trademark">
+<h2>商标（Trademark）<a class="headerlink" href="#trademark" title="Link to this heading">¶</a></h2>
+<p>请参阅 <a class="reference external" href="https://github.com/LibreTranslate/LibreTranslate/blob/main/TRADEMARK.md">商标使用指南</a></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="contro.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">贡献指南（Contributing）</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, libretranslate
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">LibreTranslate</a><ul>
+<li><a class="reference internal" href="#api">API 例子</a><ul>
+<li><a class="reference internal" href="#simple">Simple</a></li>
+<li><a class="reference internal" href="#id1">自动检测语言</a></li>
+<li><a class="reference internal" href="#html">HTML</a></li>
+<li><a class="reference internal" href="#id2">其他翻译</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">安装和运行</a></li>
+<li><a class="reference internal" href="#docker">使用 Docker 运行</a><ul>
+<li><a class="reference internal" href="#linux-macos">Linux/macOS</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">构建并运行</a><ul>
+<li><a class="reference internal" href="#cuda">CUDA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">参数</a><ul>
+<li><a class="reference internal" href="#id6">设置 / 标志</a></li>
+<li><a class="reference internal" href="#id7">配置参数</a></li>
+<li><a class="reference internal" href="#id8">说明</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">更新</a><ul>
+<li><a class="reference internal" href="#id10">软件</a></li>
+<li><a class="reference internal" href="#id11">语言模型</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wsgi-gunicorn">使用 WSGI 与 Gunicorn 运行</a></li>
+<li><a class="reference internal" href="#kubernetes">Kubernetes 部署</a><ul>
+<li><a class="reference internal" href="#helm-chart">Helm Chart</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id12">管理 API 密钥</a><ul>
+<li><a class="reference internal" href="#id13">添加新密钥</a></li>
+<li><a class="reference internal" href="#id14">删除密钥</a></li>
+<li><a class="reference internal" href="#id15">查看密钥</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#prometheus">Prometheus 指标监控</a></li>
+<li><a class="reference internal" href="#language-bindings">语言绑定（Language Bindings）</a></li>
+<li><a class="reference internal" href="#discourse">Discourse 插件</a></li>
+<li><a class="reference internal" href="#id16">移动应用</a></li>
+<li><a class="reference internal" href="#id17">网页浏览器支持</a></li>
+<li><a class="reference internal" href="#id18">公共镜像站点</a></li>
+<li><a class="reference internal" href="#tor-i2p">TOR / I2P 镜像</a></li>
+<li><a class="reference internal" href="#id19">添加新语言模型</a></li>
+<li><a class="reference internal" href="#id20">本地化（界面语言支持）</a><ul>
+<li><a class="reference internal" href="#ui">UI 语言</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#roadmap">路线图（Roadmap）</a></li>
+<li><a class="reference internal" href="#faq">常见问题（FAQ）</a><ul>
+<li><a class="reference internal" href="#libretranslate-com-api">我可以在生产环境的应用中使用 libretranslate.com 上的 API 服务吗？</a></li>
+<li><a class="reference internal" href="#libretranslate-com">为什么 libretranslate.com 上的部分翻译与自托管版本不同？</a></li>
+<li><a class="reference internal" href="#id21">语言模型存储在哪里？</a></li>
+<li><a class="reference internal" href="#apache2-caddy-libretranslate">我可以在反向代理（如 Apache2 或 Caddy）后面运行 LibreTranslate 吗？</a></li>
+<li><a class="reference internal" href="#systemd-libretranslate-pip-python">我可以使用 systemd 来运行 LibreTranslate（即默认使用 pip/python 安装的版本）吗？</a></li>
+<li><a class="reference internal" href="#id22">我可以进行批量翻译吗？</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing">贡献（Contributing）</a></li>
+<li><a class="reference internal" href="#credits">鸣谢（Credits）</a></li>
+<li><a class="reference internal" href="#license">许可证（License）</a></li>
+<li><a class="reference internal" href="#trademark">商标（Trademark）</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=f115507d"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script src="_static/tabs.js?v=3ee01567"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/translations.js?v=beaddf03"></script>
+    </body>
+</html>
